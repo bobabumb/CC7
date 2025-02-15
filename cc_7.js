@@ -40,3 +40,12 @@ const calculateLoyaltyDiscount = (amount, years) => {
  // test data
  console.log(calculateShippingCost(10, "USA", true)); // expected output: "shipping cost: $20.00"
  console.log(calculateShippingCost(5, "canada", false)); // expected output: "shipping cost: $13.50"
+
+ // task 5 returning values
+ const calculateLoanInterest = (principal, rate, years) => {
+    const interest = principal * rate * years; // calculating total interest using formula
+    const formattedInterest = interest.toFixed(2); // formatting interest to two decimal places
+    return `total interest: $${formattedInterest}`; // return the result as a string
+ }; 
+ console.log(calculateLoanInterest(1000, 0.05, 3)); // expected output: "total interest: $150.00"
+ console.log(calculateLoanInterest(5000, 0.07, 5)); // expected output: "total interest: $1750.00"
