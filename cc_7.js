@@ -71,3 +71,10 @@ const createBudgetTracker = () => {
 let budget = createBudgetTracker();
 console.log(budget(300)); // expected output: "current balance: -$300"
 console.log(budget(200)); // expected output: "current balance: -$500"
+
+// task 8 recursion in JavaScript
+const calculateGrowth = (years, revenue) => 
+    years === 0 ? `project revenue: $${revenue.toFixed(2)}` : calculateGrowth(years - 1, revenue * 1.05);
+// test data
+console.log(calculateGrowth(8, 1000)); // expected output: "project revenue: $1102"
+console.log(calculateGrowth(5, 5000)); // expected output: "project revenue: $6381"
