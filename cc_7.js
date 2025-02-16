@@ -59,3 +59,15 @@ const calculateLoyaltyDiscount = (amount, years) => {
 const highValueTransaction = filterHighValueTransaction(transaction, amount => amount > 1000);
 console.log(highValueTransaction); // expected output: [1200, 3000, 2200]
 
+// task 7 closures
+const createBudgetTracker = () => {
+    let balance = 0; // initialize balance to 0
+    return (expense) => {
+        balance -= expense; // subtracting the expense from the balance
+        return `current balance: -$${Math.abs(balance).toFixed(2)}`; // return updated balance
+    };
+};
+// test data 
+let budget = createBudgetTracker();
+console.log(budget(300)); // expected output: "current balance: -$300"
+console.log(budget(200)); // expected output: "current balance: -$500"
