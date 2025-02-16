@@ -33,7 +33,7 @@ const calculateLoyaltyDiscount = (amount, years) => {
 
  // task 4 parameters and arguments 
  const calculateShippingCost = (weight, location, expedited = false) => {
-    const baseCost = location ==- "USA" ? 5 + (0.5 * weight) : location === "canada" ? 10 + (0.7 * weight) : null;
+    const baseCost = location === "USA" ? 5 + (0.5 * weight) : location === "canada" ? 10 + (0.7 * weight) : null;
     if (baseCost === null) throw new Error("unsupported location");
     return `shipping cost: $${(baseCost + (expedited ? 10 : 0)).toFixed(2)}`;
  }; 
