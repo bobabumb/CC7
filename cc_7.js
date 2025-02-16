@@ -49,3 +49,13 @@ const calculateLoyaltyDiscount = (amount, years) => {
  }; 
  console.log(calculateLoanInterest(1000, 0.05, 3)); // expected output: "total interest: $150.00"
  console.log(calculateLoanInterest(5000, 0.07, 5)); // expected output: "total interest: $1750.00"
+
+ // task 6 higher-order functions
+ let transaction = [500, 1200, 3000, 800, 2200]; // declaring transaction array
+ const filterHighValueTransaction = (transaction, filterFunction) => {
+    return transaction.filter(filterFunction); // higher-order function to filter high-value transactions
+ };
+// test data
+const highValueTransaction = filterHighValueTransaction(transaction, amount => amount > 1000);
+console.log(highValueTransaction); // expected output: [1200, 3000, 2200]
+
